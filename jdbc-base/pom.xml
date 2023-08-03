@@ -12,17 +12,11 @@
     <artifactId>jdbc-base</artifactId>
 
     <properties>
-        <dal.version>3.0.1</dal.version>
-        <mysql-connector.version>8.0.33-ctrip.1</mysql-connector.version>
+        <mysql-connector.version>5.1.48</mysql-connector.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>com.ctrip.platform</groupId>
-                <artifactId>ctrip-datasource</artifactId>
-                <version>${dal.version}</version>
-            </dependency>
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>

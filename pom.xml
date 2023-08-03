@@ -23,9 +23,10 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <framework-bom.version>7.14.0</framework-bom.version>
+        <framework-bom.version>7.14.1</framework-bom.version>
         <springboot.version>2.7.14</springboot.version>
         <qconfig.version>1.100.54-ctrip</qconfig.version>
+        <dal-client.version>2.4.50</dal-client.version>
     </properties>
 
     <dependencyManagement>
@@ -54,6 +55,16 @@
                 <artifactId>qconfig-common</artifactId>
                 <version>${qconfig.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.ctrip.platform</groupId>
+                <artifactId>ctrip-dal-client</artifactId>
+                <version>${dal-client.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ctrip.platform</groupId>
+                <artifactId>ctrip-datasource</artifactId>
+                <version>${dal-client.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -67,16 +78,5 @@
             <groupId>com.dianping.cat</groupId>
             <artifactId>cat-client</artifactId>
         </dependency>
-
     </dependencies>
-
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
 </project>
