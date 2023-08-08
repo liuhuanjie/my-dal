@@ -12,19 +12,20 @@
 
     <groupId>com.ctrip.demo</groupId>
     <artifactId>dal-demo</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
         <module>datasource-mybatis</module>
         <module>springboot-dal</module>
         <module>jdbc-base</module>
+        <module>datasource-jdbc</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
-        <framework-bom.version>7.14.1</framework-bom.version>
-        <springboot.version>2.7.14</springboot.version>
+        <framework-bom.version>7.28.0-SNAPSHOT</framework-bom.version>
+        <springboot.version>1.4.3.RELEASE</springboot.version>
         <qconfig.version>1.100.54-ctrip</qconfig.version>
         <dal-client.version>2.4.50</dal-client.version>
     </properties>
@@ -69,6 +70,10 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>

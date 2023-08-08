@@ -2,37 +2,41 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.ctrip.demo</groupId>
         <artifactId>dal-demo</artifactId>
+        <groupId>com.ctrip.demo</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+    <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ctrip.demo</groupId>
-    <artifactId>springboot-dal</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>datasource-jdbc</artifactId>
 
     <properties>
-        <dal-client.version>2.4.54</dal-client.version>
+        <jdbc-base.version>1.0.0-SNAPSHOT</jdbc-base.version>
+        <dal.version>2.4.53</dal.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>com.ctrip.demo</groupId>
+                <artifactId>jdbc-base</artifactId>
+                <version>${jdbc-base.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>com.ctrip.platform</groupId>
-                <artifactId>ctrip-dal-client</artifactId>
-                <version>${dal-client.version}</version>
+                <artifactId>ctrip-datasource</artifactId>
+                <version>${dal.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
         <dependency>
-            <groupId>com.ctrip.platform</groupId>
-            <artifactId>ctrip-dal-client</artifactId>
+            <groupId>com.ctrip.demo</groupId>
+            <artifactId>jdbc-base</artifactId>
         </dependency>
-    </dependencies>
 
+    </dependencies>
 
 </project>
