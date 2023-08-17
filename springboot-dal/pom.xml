@@ -14,7 +14,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <dal-client.version>2.4.54</dal-client.version>
+        <dal-client.version>3.0.1</dal-client.version>
+        <mysql-connector.version>8.0.33-ctrip.1</mysql-connector.version>
     </properties>
 
     <dependencyManagement>
@@ -29,8 +30,24 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.ctrip.demo</groupId>
+            <artifactId>jdbc-base</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>mysql-connector-java</artifactId>
+                    <groupId>mysql</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
             <groupId>com.ctrip.platform</groupId>
             <artifactId>ctrip-dal-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector.version}</version>
         </dependency>
     </dependencies>
 
