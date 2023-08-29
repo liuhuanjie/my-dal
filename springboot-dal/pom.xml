@@ -14,8 +14,10 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <dal-client.version>3.0.1</dal-client.version>
-        <mysql-connector.version>8.0.33-ctrip.1</mysql-connector.version>
+<!--        <dal-client.version>2.4.50</dal-client.version>-->
+<!--        <mysql-connector.version>5.1.48</mysql-connector.version>-->
+        <dal-client.version>3.0.2</dal-client.version>
+        <mysql-connector.version>8.0.25</mysql-connector.version>
     </properties>
 
     <dependencyManagement>

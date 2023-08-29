@@ -18,7 +18,7 @@ import com.ctrip.platform.dal.dao.DalPojo;
  * @date 2023-08-08
  */
 @Entity
-@Database(name = "bbzfxdalapp4testshardbasedb_dalcluster")
+@Database(name = "dbadalclustertest01db_dalcluster")
 @Table(name = "dalservicetable")
 public class Dalservicetable implements DalPojo {
 
@@ -84,4 +84,13 @@ public class Dalservicetable implements DalPojo {
         this.datachangeLasttime = datachangeLasttime;
     }
 
+    @Override
+    public String toString() {
+        return "Dalservicetable{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", datachangeLasttime=" + datachangeLasttime +
+                '}';
+    }
 }
