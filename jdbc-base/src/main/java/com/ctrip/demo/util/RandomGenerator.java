@@ -23,7 +23,7 @@ public class RandomGenerator {
         return random.nextInt();
     }
 
-    public static Dalservicetable getTableInstance() {
+    public static Dalservicetable getStaticTableInstance() {
         Dalservicetable dalservicetable = new Dalservicetable();
         dalservicetable.setName("1");
         dalservicetable.setAge(1);
