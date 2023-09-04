@@ -38,18 +38,6 @@ public class HelloController {
     @Resource
     private DalService dalService;
 
-    static {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (Exception e) {
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-            } catch (Exception t) {
-                throw new RuntimeException(t);
-            }
-        }
-    }
-
     @PostConstruct
     private void init() throws SQLException {
         tableOperations = new DalTableDao<>(Dalservicetable.class, clusterName);
@@ -62,7 +50,7 @@ public class HelloController {
             case "dal":
                 return getConnectionUrlByDal("dbadalclustertest01db_dalcluster");
             case "driver":
-                return getConnectionUrlByDriver(MysqlInstanceEnum.mydb_slave);
+                return getConnectionUrlByDriver(MysqlInstanceEnum.dalclustertest01_slave);
         }
 
         return "";
@@ -116,11 +104,9 @@ public class HelloController {
     private void showVariables(Connection connection, String showSql) throws SQLException {
         //show  variables like '%collation%';
         String sql=showSql;//生成一条sql语句
-        //String sqlset="set names utf8mb4 collate utf8mb4_general_ci;";//生成一条sql语句
-        //String sqlset="set names utf8mb4 ;";//生成一条sql语句
-        Statement stmt=connection.createStatement();//创建Statement对象
+        Statement stmt=connection.createStatement();
         // stmt.executeQuery(sqlset);
-        ResultSet resultSet = stmt.executeQuery(sql);//执行sql语句
+        ResultSet resultSet = stmt.executeQuery(sql);
         while (resultSet.next()) {
             System.out.print(resultSet.getString("Variable_name") + "         ");
             System.out.println(resultSet.getString("Value"));
