@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import com.ctrip.platform.dal.dao.annotation.Database;
 import com.ctrip.platform.dal.dao.annotation.Type;
+
+import java.sql.Date;
 import java.sql.Types;
 import java.sql.Timestamp;
 
@@ -44,6 +46,8 @@ public class Dalservicetable implements DalPojo {
     @Column(name = "age")
     @Type(value = Types.INTEGER)
     private Integer age;
+
+    private Timestamp birth;
 
     /**
      * 更新时间
@@ -84,12 +88,21 @@ public class Dalservicetable implements DalPojo {
         this.datachangeLasttime = datachangeLasttime;
     }
 
+    public Timestamp getBirth() {
+        return birth;
+    }
+
+    public void setBirth(Timestamp birth) {
+        this.birth = birth;
+    }
+
     @Override
     public String toString() {
         return "Dalservicetable{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", birth=" + birth +
                 ", datachangeLasttime=" + datachangeLasttime +
                 '}';
     }
