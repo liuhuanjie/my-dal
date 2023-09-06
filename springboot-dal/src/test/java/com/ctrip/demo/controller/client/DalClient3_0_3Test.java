@@ -1,9 +1,11 @@
 package com.ctrip.demo.controller.client;
 
 import com.ctrip.datasource.configure.DalDataSourceFactory;
+import com.ctrip.demo.entity.CacheCluster;
 import com.ctrip.demo.entity.Dalservicetable;
 import com.ctrip.platform.dal.dao.DalHints;
 import com.ctrip.platform.dal.dao.base.DalDatabaseOperations;
+import com.ctrip.platform.dal.dao.base.DalTableOperations;
 import com.ctrip.platform.dal.dao.base.SQLResult;
 import com.ctrip.platform.dal.dao.client.DalOperationsFactory;
 import org.junit.Test;
@@ -61,5 +63,12 @@ public class DalClient3_0_3Test {
                 }
             }
         }
+    }
+
+    @Test
+    public void testCacheCluster() throws SQLException {
+        DalTableOperations<CacheCluster> operations = DalOperationsFactory.getDalTableOperations(CacheCluster.class);
+        List<CacheCluster> query = operations.query("select * from cache_cluster where ID = ? AND IsDeleted=?", new DalHints(), 261, 0);
+        System.out.println(query.get(0));
     }
 }

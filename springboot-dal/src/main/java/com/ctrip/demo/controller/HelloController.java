@@ -6,7 +6,6 @@ import com.ctrip.demo.entity.Dalservicetable;
 import com.ctrip.demo.enums.MysqlInstanceEnum;
 import com.ctrip.demo.service.DalService;
 import com.ctrip.demo.util.Constants;
-import com.ctrip.demo.util.FunctionWrapUtil;
 import com.ctrip.demo.util.RandomGenerator;
 import com.ctrip.platform.dal.dao.DalHints;
 import com.ctrip.platform.dal.dao.DalTableDao;
@@ -23,7 +22,6 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.Date;
-import java.util.List;
 
 @RestController()
 public class HelloController {
