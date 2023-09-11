@@ -9,16 +9,18 @@ public class CollationInstance {
         return Variable_name;
     }
 
-    public void setVariable_name(String variable_name) {
+    public CollationInstance setVariable_name(String variable_name) {
         Variable_name = variable_name;
+        return this;
     }
 
     public String getValue() {
         return Value;
     }
 
-    public void setValue(String value) {
+    public CollationInstance setValue(String value) {
         Value = value;
+        return this;
     }
 
     @Override
