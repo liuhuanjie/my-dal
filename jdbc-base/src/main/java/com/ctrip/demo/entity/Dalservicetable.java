@@ -60,40 +60,45 @@ public class Dalservicetable implements DalPojo {
         return id;
     }
 
-    public void setId(Long id) {
+    public Dalservicetable setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public Dalservicetable setName(String name) {
         this.name = name;
+        return this;
     }
 
     public Integer getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public Dalservicetable setAge(Integer age) {
         this.age = age;
-    }
-
-    public Timestamp getDatachangeLasttime() {
-        return datachangeLasttime;
-    }
-
-    public void setDatachangeLasttime(Timestamp datachangeLasttime) {
-        this.datachangeLasttime = datachangeLasttime;
+        return this;
     }
 
     public Timestamp getBirth() {
         return birth;
     }
 
-    public void setBirth(Timestamp birth) {
+    public Dalservicetable setBirth(Timestamp birth) {
         this.birth = birth;
+        return this;
+    }
+
+    public Timestamp getDatachangeLasttime() {
+        return datachangeLasttime;
+    }
+
+    public Dalservicetable setDatachangeLasttime(Timestamp datachangeLasttime) {
+        this.datachangeLasttime = datachangeLasttime;
+        return this;
     }
 
     @Override
