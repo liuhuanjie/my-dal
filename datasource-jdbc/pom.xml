@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>dal-demo</artifactId>
-        <groupId>com.ctrip.demo</groupId>
+        <groupId>com.ctrip.framework</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -19,7 +19,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.ctrip.demo</groupId>
+                <groupId>com.ctrip.framework</groupId>
                 <artifactId>jdbc-base</artifactId>
                 <version>${jdbc-base.version}</version>
             </dependency>
@@ -33,7 +33,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.ctrip.demo</groupId>
+            <groupId>com.ctrip.framework</groupId>
             <artifactId>jdbc-base</artifactId>
         </dependency>
 

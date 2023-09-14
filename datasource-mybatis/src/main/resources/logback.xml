@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+<configuration>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%5level [%thread] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.ctrip.datasource.demo.mapper.dbadalclustertest01db">
+        <level value="debug"/>
+    </logger>
+    <root level="ERROR">
+        <appender-ref ref="stdout"/>
+    </root>
+
+</configuration>

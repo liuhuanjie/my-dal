@@ -10,15 +10,15 @@
         <version>1.23.0</version>
     </parent>
 
-    <groupId>com.ctrip.demo</groupId>
+    <groupId>com.ctrip.framework</groupId>
     <artifactId>dal-demo</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
+        <module>jdbc-base</module>
         <module>datasource-mybatis</module>
         <module>springboot-dal</module>
-        <module>jdbc-base</module>
         <module>datasource-jdbc</module>
     </modules>
 
@@ -26,7 +26,7 @@
         <java.version>1.8</java.version>
         <framework-bom.version>7.32.0</framework-bom.version>
         <springboot.version>1.4.3.RELEASE</springboot.version>
-        <qconfig.version>1.100.54-ctrip</qconfig.version>
+        <qconfig.version>1.100.60-ctrip</qconfig.version>
     </properties>
 
     <dependencyManagement>
@@ -71,6 +71,11 @@
         <dependency>
             <groupId>com.dianping.cat</groupId>
             <artifactId>cat-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
