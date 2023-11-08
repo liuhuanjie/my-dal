@@ -7,6 +7,7 @@ import com.ctrip.dal.demo.util.RandomGenerator;
 import com.ctrip.datasource.configure.DalDataSourceFactory;
 import com.ctrip.dal.demo.entity.CollationInstance;
 import com.ctrip.dal.demo.entity.Dalservicetable;
+import com.ctrip.framework.dal.cluster.client.cluster.ArchiveStrategyEnum;
 import com.ctrip.platform.dal.dao.DalHints;
 import com.ctrip.platform.dal.dao.DalTableDao;
 import com.ctrip.platform.dal.dao.base.DalDatabaseOperations;
@@ -38,8 +39,8 @@ public class HelloController {
 
     @PostConstruct
     private void init() throws SQLException {
-        tableOperations = new DalTableDao<>(Dalservicetable.class, clusterName);
-        dalDatabaseOperations = DalOperationsFactory.getDalDatabaseOperations(clusterName);
+//        tableOperations = new DalTableDao<>(Dalservicetable.class, clusterName);
+//        dalDatabaseOperations = DalOperationsFactory.getDalDatabaseOperations(clusterName);
     }
 
     @GetMapping(value = "/get/datasource")
@@ -58,6 +59,21 @@ public class HelloController {
     public String requestQuery(@RequestParam(value = "type")String type) throws Exception {
         return innerQuery(type);
     }
+
+    @GetMapping(value = "transaction")
+    public void transaction(@RequestParam(name = "type")String type) throws SQLException {
+       try {
+           if ("1".equalsIgnoreCase(type))
+                dalService.transactionMethod(null);
+           else if ("2".equalsIgnoreCase(type))
+               dalService.transactionMethod(new DalHints().archiveStrategy(ArchiveStrategyEnum.ONLINE_ONLY));
+           else if("3".equalsIgnoreCase(type))
+               dalService.transactionMethod(new DalHints().archiveStrategy(ArchiveStrategyEnum.ARCHIVE_ONLY));
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+    }
+
 
     private String innerQuery(String type) throws Exception {
         switch (type) {

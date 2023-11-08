@@ -15,7 +15,7 @@
     <properties>
 <!--        <dal-client.version>2.4.50</dal-client.version>-->
 <!--        <mysql-connector.version>5.1.48</mysql-connector.version>-->
-        <dal-client.version>3.0.4</dal-client.version>
+        <dal-client.version>3.0.6.2-SNAPSHOT</dal-client.version>
         <mysql-connector.version>8.0.33-ctrip.2</mysql-connector.version>
     </properties>
 

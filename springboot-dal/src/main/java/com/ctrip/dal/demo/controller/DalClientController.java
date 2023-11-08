@@ -22,8 +22,8 @@ public class DalClientController {
 
     @PostConstruct
     public void init() {
-        tableOperations = DalOperationsFactory.getDalTableOperations(CacheCluster.class);
-        queryDao = new DalQueryDao("dbadalclustertest01db_dalcluster");
+//        tableOperations = DalOperationsFactory.getDalTableOperations(CacheCluster.class);
+//        queryDao = new DalQueryDao("dbadalclustertest01db_dalcluster");
 
     }
 
